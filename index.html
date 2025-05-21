@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Indian Dream List</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: (linear-gradient to bottom right, #fceabb, #f8b500); /* Warm gradient background */
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 40px auto;
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            padding: 30px 40px;
+            animation: fadeIn 1s ease-out;
+            width: 100%; /* Ensure container takes full width up to max-width */
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            text-align: center;
+            color: #d35400; /* Deep orange */
+            font-size: 3em;
+            margin-bottom: 40px;
+            position: relative;
+            animation: slideIn 1.5s ease-out;
+        }
+
+        @keyframes slideIn {
+            from { left: -150px; opacity: 0; }
+            to { left: 0; opacity: 1; }
+        }
+
+        h1::after {
+            content: '';
+            display: block;
+            width: 90px;
+            height: 5px;
+            background-color: #f1c40f; /* Vibrant yellow underline */
+            margin: 15px auto 0;
+            border-radius: 3px;
+        }
+
+        .dream-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+            gap: 25px; /* Spacing between dream boxes */
+            padding: 0;
+            list-style: none; /* Remove default list bullets */
+        }
+
+        .dream-item {
+            background-color: #fefefe; /* White background for each box */
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: left;
+            border: 1px solid #eee; /* Subtle border */
+        }
+
+        .dream-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .dream-icon {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            color: #27ae60; /* Green icon color */
+            animation: bounceIn 1s ease-out;
+        }
+
+        @keyframes bounceIn {
+            0% { transform: scale(0.5); opacity: 0; }
+            60% { transform: scale(1.1); opacity: 1; }
+            100% { transform: scale(1); }
+        }
+
+        .dream-text {
+            font-size: 1.1em;
+            color: #555;
+            flex-grow: 1; /* Allow text to take available space */
+        }
+
+        .completed-item {
+            background: linear-gradient(135deg, #d4edda, #cce5d4); /* Lighter green gradient */
+            border-left: 8px solid #28a745; /* Stronger green left border */
+            opacity: 0.9;
+        }
+
+        .completed-item .dream-icon {
+            color: #1e8449; /* Darker green for completed icon */
+        }
+
+        .completed-item .dream-text {
+            text-decoration: line-through;
+            color: #888;
+        }
+
+        .pending-item {
+            border-left: 8px solid #e74c3c; /* Red left border for pending */
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                margin: 20px auto;
+                padding: 25px 30px;
+            }
+            h1 {
+                font-size: 2.5em;
+                margin-bottom: 30px;
+            }
+            .dream-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust min width for smaller screens */
+                gap: 20px;
+            }
+            .dream-item {
+                padding: 20px;
+            }
+            .dream-icon {
+                font-size: 2em;
+                margin-bottom: 10px;
+            }
+            .dream-text {
+                font-size: 1em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 15px;
+            }
+            .container {
+                padding: 20px 25px;
+                border-radius: 10px;
+            }
+            h1 {
+                font-size: 2em;
+                margin-bottom: 25px;
+            }
+            .dream-grid {
+                grid-template-columns: 1fr; /* Single column layout on very small screens */
+                gap: 15px;
+            }
+            .dream-item {
+                padding: 18px;
+            }
+            .dream-icon {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1> Dreams Bucket List🌟</h1>
+        <ul class="dream-grid">
+            <li class="dream-item pending-item">
+                <span class="dream-icon">🚂</span>
+                <span class="dream-text">Traveling</span>
+            </li>
+            <li class="dream-item pending-item">
+                <span class="dream-icon">🏞️</span>
+                <span class="dream-text">Visit a *hill station in Himachal Pradesh* during monsoon</span>
+            </li>
+        
+            <li class="dream-item pending-item">
+                <span class="dream-icon">🎨</span>
+                <span class="dream-text">Attend a *local art workshop* in a village to learn traditional craft..</span>
+            </li>
+            <li class="dream-item pending-item">
+                <span class="dream-icon">☀️</span>
+                <span class="dream-text">Witness a *serene sunrise* over the Ganga in Varanasi.</span>
+            </li>
+            <li class="dream-item pending-item">
+                <span class="dream-icon">🚌</span>
+                <span class="dream-text">Take a *short ride on a local bus* to experience daily life.</span>
+            </li>
+            <li class="dream-item pending-item">
+                <span class="dream-icon">📚</span>
+                <span class="dream-text">Read a book by a *famous Indian author*.</span>
+            </li>
+            <li class="dream-item pending-item">
+                <span class="dream-icon">🎉</span>
+                <span class="dream-text">Witness a small *local festival celebration* in a village.</span>
+            </li>
+            <li class="dream-item pending-item">
+                <span class="dream-icon">🧘‍♀️</span>
+                <span class="dream-text">Practice *meditation   </span>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
